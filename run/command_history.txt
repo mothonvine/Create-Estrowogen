@@ -1,0 +1,3 @@
+/setblock 6 -1 -10 create_estrwowogen:base
+/give Dev create_estrwowogen:base
+/give Dev create_estrwowogen:item

@@ -1,3 +1,5 @@
 /setblock 6 -1 -10 create_estrwowogen:base
 /give Dev create_estrwowogen:base
 /give Dev create_estrwowogen:item
+/summon create_estrwowogen:rosy_maple_moth
+/summon create_estrwowogen:rosy_maple_moth ~ ~ ~ {NoGravity:1b}

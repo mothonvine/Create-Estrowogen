@@ -3,3 +3,19 @@
 /give Dev create_estrwowogen:item
 /summon create_estrwowogen:rosy_maple_moth
 /summon create_estrwowogen:rosy_maple_moth ~ ~ ~ {NoGravity:1b}
+/damage Dev 10
+/damage Dev 10 create:crush
+/effect give Dev create_estrwowogen:girl_power
+/effect clear De
+/effect clear Dev
+/effect give Dev create_estrwowogen:girl_power
+/effect clear Dev
+/effect give Dev create_estrwowogen:girl_power
+/effect clear Dev
+/effect give Dev create_estrwowogen:girl_power 1 2 true
+/damage Dev 10 create:crush
+/effect give Dev create_estrwowogen:girl_power 1 2 true
+/give Dev minecraft:nether_brick
+/summon create_estrwowogen:rosy_maple_moth
+/time set day
+/summon create_estrwowogen:rosy_maple_moth

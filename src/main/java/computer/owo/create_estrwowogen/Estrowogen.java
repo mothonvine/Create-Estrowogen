@@ -6,6 +6,7 @@ import computer.owo.create_estrwowogen.common.blocks.EstrowogenBlocks;
 import computer.owo.create_estrwowogen.common.creative.EstrowogenCreativeTabs;
 import computer.owo.create_estrwowogen.common.entities.EstrowogenEntities;
 import computer.owo.create_estrwowogen.common.items.EstrowogenItems;
+import computer.owo.create_estrwowogen.common.mbeffects.EstrowogenMobEffect;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.entity.EntityRenderers;import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
@@ -31,6 +32,7 @@ public class Estrowogen {
         EstrowogenItems.register(modEventBus);
         EstrowogenCreativeTabs.register(modEventBus);
         EstrowogenEntities.register(modEventBus);
+        EstrowogenMobEffect.register(modEventBus);
 
         NeoForge.EVENT_BUS.register(this);
 
@@ -48,16 +50,4 @@ public class Estrowogen {
         LOGGER.info("HELLO from server starting");
     }
 
-    // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
-    @EventBusSubscriber(modid = MODID, value = Dist.CLIENT)
-    public static class ClientModEvents {
-        @SubscribeEvent
-        public static void onClientSetup(FMLClientSetupEvent event) {
-            // Some client setup code
-            LOGGER.info("HELLO FROM CLIENT SETUP");
-            LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
-
-            EntityRenderers.register(EstrowogenEntities.ROSY_MAPLE_MOTH_ENTITY.get(), RosyMapleMothRenderer::new );
-        }
-    }
 }

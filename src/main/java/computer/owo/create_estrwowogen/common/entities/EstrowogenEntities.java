@@ -24,7 +24,7 @@ public class EstrowogenEntities {
                             RoseMapleMothEntity::new,
                             MobCategory.CREATURE
                     )
-                            .sized(1f,1f)
+                            .sized(0.4f,0.4f)
                             .build(ResourceKey.create(
                                     Registries.ENTITY_TYPE,
                             ResourceLocation.fromNamespaceAndPath("examplemod", "my_entity")

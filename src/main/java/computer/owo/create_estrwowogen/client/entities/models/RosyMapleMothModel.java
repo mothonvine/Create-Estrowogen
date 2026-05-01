@@ -4,6 +4,7 @@ package computer.owo.create_estrwowogen.client.entities.models;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import computer.owo.create_estrwowogen.Estrowogen;
+import computer.owo.create_estrwowogen.client.entities.animations.RosyMapleMothAnimations.RosyMapleMothAnimations;
 import computer.owo.create_estrwowogen.common.entities.entity.RoseMapleMothEntity;
 import net.minecraft.client.model.HierarchicalModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
@@ -11,7 +12,6 @@ import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.entity.Entity;
 
 public class RosyMapleMothModel<T extends RoseMapleMothEntity> extends HierarchicalModel<T> {
     // This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
@@ -77,21 +77,21 @@ public class RosyMapleMothModel<T extends RoseMapleMothEntity> extends Hierarchi
         MeshDefinition meshdefinition = new MeshDefinition();
         PartDefinition partdefinition = meshdefinition.getRoot();
 
-        PartDefinition bone = partdefinition.addOrReplaceChild("bone", CubeListBuilder.create().texOffs(13, 5).addBox(-3.0F, -4.0F, -4.0F, 6.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 24.0F, 0.0F));
+        PartDefinition bone = partdefinition.addOrReplaceChild("bone", CubeListBuilder.create().texOffs(13, 5).addBox(-3.0F, -4.0F, -4.0F, 6.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 22.0F, 0.0F));
 
-        PartDefinition wings = bone.addOrReplaceChild("wings", CubeListBuilder.create(), PartPose.offset(0.0F, 0.0F, 0.0F));
+        PartDefinition wings = bone.addOrReplaceChild("wings", CubeListBuilder.create(), PartPose.offset(0.0F, -4.0F, -3.0F));
 
         PartDefinition lower_wings = wings.addOrReplaceChild("lower_wings", CubeListBuilder.create(), PartPose.offset(0.0F, -0.25F, 0.0F));
 
-        PartDefinition left_lower_wing = lower_wings.addOrReplaceChild("left_lower_wing", CubeListBuilder.create().texOffs(-8, 10).addBox(0.0F, -4.0F, -3.0F, 5.0F, 0.0F, 8.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 0.0F, 0.0F));
+        PartDefinition left_lower_wing = lower_wings.addOrReplaceChild("left_lower_wing", CubeListBuilder.create().texOffs(-8, 10).addBox(-1.5F, 0.0F, -1.5F, 5.0F, 0.0F, 8.0F, new CubeDeformation(0.0F)), PartPose.offset(1.5F, 0.0F, 1.5F));
 
-        PartDefinition right_lower_wing = lower_wings.addOrReplaceChild("right_lower_wing", CubeListBuilder.create().texOffs(-8, 10).mirror().addBox(-5.0F, -4.0F, -3.0F, 5.0F, 0.0F, 8.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.offset(0.0F, 0.0F, 0.0F));
+        PartDefinition right_lower_wing = lower_wings.addOrReplaceChild("right_lower_wing", CubeListBuilder.create().texOffs(-8, 10).mirror().addBox(-3.5F, 0.0F, -1.5F, 5.0F, 0.0F, 8.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.offset(-1.5F, 0.0F, 1.5F));
 
-        PartDefinition upper_wings = wings.addOrReplaceChild("upper_wings", CubeListBuilder.create(), PartPose.offset(0.0F, -0.5F, 0.0F));
+        PartDefinition upper_wings = wings.addOrReplaceChild("upper_wings", CubeListBuilder.create(), PartPose.offset(0.0F, -0.65F, 0.0F));
 
-        PartDefinition left_upper_wing = upper_wings.addOrReplaceChild("left_upper_wing", CubeListBuilder.create().texOffs(-10, 0).addBox(0.0F, -4.25F, -3.0F, 5.0F, 0.0F, 10.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 0.0F, 0.0F));
+        PartDefinition left_upper_wing = upper_wings.addOrReplaceChild("left_upper_wing", CubeListBuilder.create().texOffs(-10, 0).addBox(-2.5F, 0.0F, -0.5F, 5.0F, 0.0F, 10.0F, new CubeDeformation(0.0F)), PartPose.offset(2.5F, 0.0F, 0.5F));
 
-        PartDefinition right_upper_wing = upper_wings.addOrReplaceChild("right_upper_wing", CubeListBuilder.create().texOffs(-10, 0).mirror().addBox(-5.0F, -4.25F, -3.0F, 5.0F, 0.0F, 10.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.offset(0.0F, 0.0F, 0.0F));
+        PartDefinition right_upper_wing = upper_wings.addOrReplaceChild("right_upper_wing", CubeListBuilder.create().texOffs(-10, 0).mirror().addBox(-2.5F, 0.0F, -0.5F, 5.0F, 0.0F, 10.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.offset(-2.5F, 0.0F, 0.5F));
 
         PartDefinition seg1_left_leg = bone.addOrReplaceChild("seg1_left_leg", CubeListBuilder.create(), PartPose.offset(2.5F, 0.0F, -3.25F));
 
@@ -99,27 +99,27 @@ public class RosyMapleMothModel<T extends RoseMapleMothEntity> extends Hierarchi
 
         PartDefinition seg1_right_leg = bone.addOrReplaceChild("seg1_right_leg", CubeListBuilder.create().texOffs(0, 18).addBox(-3.0F, -0.5F, -0.5F, 3.0F, 1.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offset(-2.5F, 0.0F, -3.25F));
 
-        PartDefinition head = bone.addOrReplaceChild("head", CubeListBuilder.create().texOffs(15, 0).addBox(-2.0F, -1.0F, -2.0F, 4.0F, 3.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, -2.0F, -4.0F));
+        PartDefinition head = bone.addOrReplaceChild("head", CubeListBuilder.create().texOffs(15, 0).addBox(-2.0F, -1.5F, -2.0F, 4.0F, 3.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, -1.5F, -4.0F));
 
-        PartDefinition antennae = head.addOrReplaceChild("antennae", CubeListBuilder.create(), PartPose.offset(0.0F, 2.0F, 4.0F));
+        PartDefinition antennae = head.addOrReplaceChild("antennae", CubeListBuilder.create(), PartPose.offset(0.0F, -1.5F, -1.0F));
 
-        PartDefinition right_antenna = antennae.addOrReplaceChild("right_antenna", CubeListBuilder.create(), PartPose.offset(0.0F, 0.0F, 0.0F));
+        PartDefinition right_antenna = antennae.addOrReplaceChild("right_antenna", CubeListBuilder.create(), PartPose.offset(-2.0436F, 0.0F, -0.001F));
 
-        PartDefinition cube_r2 = right_antenna.addOrReplaceChild("cube_r2", CubeListBuilder.create().texOffs(0, 24).mirror().addBox(-1.0F, -2.0F, 1.0F, 2.0F, 2.0F, 0.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.offsetAndRotation(-2.0F, -2.0F, -6.0F, 0.0F, -0.0436F, 0.0F));
+        PartDefinition cube_r2 = right_antenna.addOrReplaceChild("cube_r2", CubeListBuilder.create().texOffs(0, 24).mirror().addBox(-1.0F, -2.0F, 1.0F, 2.0F, 2.0F, 0.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.offsetAndRotation(0.0436F, 1.0F, -0.999F, 0.0F, -0.0436F, 0.0F));
 
-        PartDefinition right_antenna_seg2 = right_antenna.addOrReplaceChild("right_antenna_seg2", CubeListBuilder.create(), PartPose.offset(0.0F, 0.0F, 0.0F));
+        PartDefinition right_antenna_seg2 = right_antenna.addOrReplaceChild("right_antenna_seg2", CubeListBuilder.create(), PartPose.offset(-1.0F, -2.0F, 0.0F));
 
-        PartDefinition cube_r3 = right_antenna_seg2.addOrReplaceChild("cube_r3", CubeListBuilder.create().texOffs(0, 22).mirror().addBox(-1.0F, -2.0F, 1.0F, 2.0F, 2.0F, 0.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.offsetAndRotation(-3.0F, -4.0F, -6.0F, 0.0F, -0.0436F, 0.0F));
+        PartDefinition cube_r3 = right_antenna_seg2.addOrReplaceChild("cube_r3", CubeListBuilder.create().texOffs(0, 22).mirror().addBox(-1.0F, -2.0F, 1.0F, 2.0F, 2.0F, 0.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.offsetAndRotation(0.0436F, 1.0F, -0.999F, 0.0F, -0.0436F, 0.0F));
 
-        PartDefinition right_antenna_seg3 = right_antenna_seg2.addOrReplaceChild("right_antenna_seg3", CubeListBuilder.create(), PartPose.offset(0.0F, 0.0F, 0.0F));
+        PartDefinition right_antenna_seg3 = right_antenna_seg2.addOrReplaceChild("right_antenna_seg3", CubeListBuilder.create(), PartPose.offset(-1.0F, -2.0F, 0.0F));
 
-        PartDefinition cube_r4 = right_antenna_seg3.addOrReplaceChild("cube_r4", CubeListBuilder.create().texOffs(0, 20).mirror().addBox(-1.0F, -2.0F, 1.0F, 2.0F, 2.0F, 0.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.offsetAndRotation(-4.0F, -6.0F, -6.0F, 0.0F, -0.0436F, 0.0F));
+        PartDefinition cube_r4 = right_antenna_seg3.addOrReplaceChild("cube_r4", CubeListBuilder.create().texOffs(0, 20).mirror().addBox(-1.0F, -2.0F, 1.0F, 2.0F, 2.0F, 0.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.offsetAndRotation(0.0436F, 1.0F, -0.999F, 0.0F, -0.0436F, 0.0F));
 
-        PartDefinition left_antenna = antennae.addOrReplaceChild("left_antenna", CubeListBuilder.create().texOffs(0, 24).addBox(1.0F, -4.0F, -5.0F, 2.0F, 2.0F, 0.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 0.0F, 0.0F));
+        PartDefinition left_antenna = antennae.addOrReplaceChild("left_antenna", CubeListBuilder.create().texOffs(0, 24).addBox(-1.0F, -1.0F, 0.0F, 2.0F, 2.0F, 0.0F, new CubeDeformation(0.0F)), PartPose.offset(2.0F, 0.0F, 0.0F));
 
-        PartDefinition left_antenna_seg2 = left_antenna.addOrReplaceChild("left_antenna_seg2", CubeListBuilder.create().texOffs(0, 22).addBox(2.0F, -6.0F, -5.0F, 2.0F, 2.0F, 0.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 0.0F, 0.0F));
+        PartDefinition left_antenna_seg2 = left_antenna.addOrReplaceChild("left_antenna_seg2", CubeListBuilder.create().texOffs(0, 22).addBox(-1.0F, -1.0F, 0.0F, 2.0F, 2.0F, 0.0F, new CubeDeformation(0.0F)), PartPose.offset(1.0F, -2.0F, 0.0F));
 
-        PartDefinition left_antenna_seg3 = left_antenna_seg2.addOrReplaceChild("left_antenna_seg3", CubeListBuilder.create().texOffs(0, 20).addBox(3.0F, -8.0F, -5.0F, 2.0F, 2.0F, 0.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 0.0F, 0.0F));
+        PartDefinition left_antenna_seg3 = left_antenna_seg2.addOrReplaceChild("left_antenna_seg3", CubeListBuilder.create().texOffs(0, 20).addBox(-1.0F, -1.0F, 0.0F, 2.0F, 2.0F, 0.0F, new CubeDeformation(0.0F)), PartPose.offset(1.0F, -2.0F, 0.0F));
 
         PartDefinition body_seg2 = bone.addOrReplaceChild("body_seg2", CubeListBuilder.create().texOffs(12, 11).addBox(-3.0F, -2.0F, 0.0F, 6.0F, 4.0F, 3.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, -2.0F, -2.0F));
 
@@ -135,11 +135,11 @@ public class RosyMapleMothModel<T extends RoseMapleMothEntity> extends Hierarchi
 
         PartDefinition cube_r6 = seg2_left_rear_leg.addOrReplaceChild("cube_r6", CubeListBuilder.create().texOffs(0, 18).addBox(-3.0F, -0.5F, -0.5F, 3.0F, 1.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, 0.0F, 0.0F, 0.0F, 3.1416F, 0.0F));
 
-        PartDefinition body_seg3 = body_seg2.addOrReplaceChild("body_seg3", CubeListBuilder.create().texOffs(14, 18).addBox(-2.0F, -3.0F, 1.0F, 4.0F, 3.0F, 3.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 2.0F, 2.0F));
+        PartDefinition body_seg3 = body_seg2.addOrReplaceChild("body_seg3", CubeListBuilder.create().texOffs(14, 18).addBox(-2.0F, -1.5F, 0.0F, 4.0F, 3.0F, 3.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 0.5F, 3.0F));
 
-        PartDefinition body_seg4 = body_seg3.addOrReplaceChild("body_seg4", CubeListBuilder.create().texOffs(14, 24).addBox(-2.0F, -3.0F, 4.0F, 4.0F, 3.0F, 3.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 0.0F, 0.0F));
+        PartDefinition body_seg4 = body_seg3.addOrReplaceChild("body_seg4", CubeListBuilder.create().texOffs(14, 24).addBox(-2.0F, -1.5F, 0.0F, 4.0F, 3.0F, 3.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 0.0F, 3.0F));
 
-        PartDefinition body_seg5 = body_seg4.addOrReplaceChild("body_seg5", CubeListBuilder.create().texOffs(3, 27).addBox(-1.0F, -2.0F, 6.0F, 2.0F, 2.0F, 3.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 0.0F, 0.0F));
+        PartDefinition body_seg5 = body_seg4.addOrReplaceChild("body_seg5", CubeListBuilder.create().texOffs(3, 27).addBox(-1.0F, -1.0F, -1.0F, 2.0F, 2.0F, 3.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 0.5F, 3.0F));
 
         return LayerDefinition.create(meshdefinition, 32, 32);
     }
@@ -151,8 +151,20 @@ public class RosyMapleMothModel<T extends RoseMapleMothEntity> extends Hierarchi
     }
 
     @Override
-    public void setupAnim(T p_102618_, float p_102619_, float p_102620_, float p_102621_, float p_102622_, float p_102623_) {
+    public void setupAnim(RoseMapleMothEntity entity, float limbSwing, float limbSwingAmount, float age, float headYaw, float headPitch) {
+        this.root().getAllParts().forEach(ModelPart::resetPose);
+        setHeadRotation(headYaw,headPitch);
 
+        this.animateWalk(RosyMapleMothAnimations.ROSY_MAPLE_MOTH_CRAWL,limbSwing,limbSwingAmount,2f,1f);
+        this.animate(entity.idleAnimationState, RosyMapleMothAnimations.ROSY_MAPLE_MOTH_IDLE, age, 1f);
+    }
+
+    private void setHeadRotation(float yaw, float pitch){
+        yaw = Math.clamp(yaw, -10,10);
+        pitch = Math.clamp(pitch, -30,30);
+
+        this.head.yRot = yaw*((float)Math.PI/180f);
+        this.head.xRot = pitch*((float)Math.PI/180f);
     }
 
     @Override

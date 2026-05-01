@@ -1,7 +1,7 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "coputer.owo.create_estrwowogen.mixin",
+  "package": "computer.owo.create_estrwowogen.mixins",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
   ],

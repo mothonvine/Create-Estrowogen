@@ -12,65 +12,42 @@ import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.resources.ResourceLocation;
+import org.jetbrains.annotations.NotNull;
 
 public class RosyMapleMothModel<T extends RoseMapleMothEntity> extends HierarchicalModel<T> {
     // This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
     public static final ModelLayerLocation LAYER_LOCATION =
             new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(Estrowogen.MODID, "rosy_maple_moth"), "main");
     private final ModelPart bone;
-    private final ModelPart wings;
-    private final ModelPart lower_wings;
-    private final ModelPart left_lower_wing;
-    private final ModelPart right_lower_wing;
-    private final ModelPart upper_wings;
-    private final ModelPart left_upper_wing;
-    private final ModelPart right_upper_wing;
-    private final ModelPart seg1_left_leg;
-    private final ModelPart seg1_right_leg;
     private final ModelPart head;
-    private final ModelPart antennae;
-    private final ModelPart right_antenna;
-    private final ModelPart right_antenna_seg2;
-    private final ModelPart right_antenna_seg3;
-    private final ModelPart left_antenna;
-    private final ModelPart left_antenna_seg2;
-    private final ModelPart left_antenna_seg3;
-    private final ModelPart body_seg2;
-    private final ModelPart seg2_right_front_leg;
-    private final ModelPart seg2_right_rear_leg;
-    private final ModelPart seg2_left_front_leg;
-    private final ModelPart seg2_left_rear_leg;
-    private final ModelPart body_seg3;
-    private final ModelPart body_seg4;
-    private final ModelPart body_seg5;
 
     public RosyMapleMothModel(ModelPart root) {
         this.bone = root.getChild("bone");
-        this.wings = this.bone.getChild("wings");
-        this.lower_wings = this.wings.getChild("lower_wings");
-        this.left_lower_wing = this.lower_wings.getChild("left_lower_wing");
-        this.right_lower_wing = this.lower_wings.getChild("right_lower_wing");
-        this.upper_wings = this.wings.getChild("upper_wings");
-        this.left_upper_wing = this.upper_wings.getChild("left_upper_wing");
-        this.right_upper_wing = this.upper_wings.getChild("right_upper_wing");
-        this.seg1_left_leg = this.bone.getChild("seg1_left_leg");
-        this.seg1_right_leg = this.bone.getChild("seg1_right_leg");
+        ModelPart wings = this.bone.getChild("wings");
+        ModelPart lower_wings = wings.getChild("lower_wings");
+        ModelPart left_lower_wing = lower_wings.getChild("left_lower_wing");
+        ModelPart right_lower_wing = lower_wings.getChild("right_lower_wing");
+        ModelPart upper_wings = wings.getChild("upper_wings");
+        ModelPart left_upper_wing = upper_wings.getChild("left_upper_wing");
+        ModelPart right_upper_wing = upper_wings.getChild("right_upper_wing");
+        ModelPart seg1_left_leg = this.bone.getChild("seg1_left_leg");
+        ModelPart seg1_right_leg = this.bone.getChild("seg1_right_leg");
         this.head = this.bone.getChild("head");
-        this.antennae = this.head.getChild("antennae");
-        this.right_antenna = this.antennae.getChild("right_antenna");
-        this.right_antenna_seg2 = this.right_antenna.getChild("right_antenna_seg2");
-        this.right_antenna_seg3 = this.right_antenna_seg2.getChild("right_antenna_seg3");
-        this.left_antenna = this.antennae.getChild("left_antenna");
-        this.left_antenna_seg2 = this.left_antenna.getChild("left_antenna_seg2");
-        this.left_antenna_seg3 = this.left_antenna_seg2.getChild("left_antenna_seg3");
-        this.body_seg2 = this.bone.getChild("body_seg2");
-        this.seg2_right_front_leg = this.body_seg2.getChild("seg2_right_front_leg");
-        this.seg2_right_rear_leg = this.body_seg2.getChild("seg2_right_rear_leg");
-        this.seg2_left_front_leg = this.body_seg2.getChild("seg2_left_front_leg");
-        this.seg2_left_rear_leg = this.body_seg2.getChild("seg2_left_rear_leg");
-        this.body_seg3 = this.body_seg2.getChild("body_seg3");
-        this.body_seg4 = this.body_seg3.getChild("body_seg4");
-        this.body_seg5 = this.body_seg4.getChild("body_seg5");
+        ModelPart antennae = this.head.getChild("antennae");
+        ModelPart right_antenna = antennae.getChild("right_antenna");
+        ModelPart right_antenna_seg2 = right_antenna.getChild("right_antenna_seg2");
+        ModelPart right_antenna_seg3 = right_antenna_seg2.getChild("right_antenna_seg3");
+        ModelPart left_antenna = antennae.getChild("left_antenna");
+        ModelPart left_antenna_seg2 = left_antenna.getChild("left_antenna_seg2");
+        ModelPart left_antenna_seg3 = left_antenna_seg2.getChild("left_antenna_seg3");
+        ModelPart body_seg2 = this.bone.getChild("body_seg2");
+        ModelPart seg2_right_front_leg = body_seg2.getChild("seg2_right_front_leg");
+        ModelPart seg2_right_rear_leg = body_seg2.getChild("seg2_right_rear_leg");
+        ModelPart seg2_left_front_leg = body_seg2.getChild("seg2_left_front_leg");
+        ModelPart seg2_left_rear_leg = body_seg2.getChild("seg2_left_rear_leg");
+        ModelPart body_seg3 = body_seg2.getChild("body_seg3");
+        ModelPart body_seg4 = body_seg3.getChild("body_seg4");
+        ModelPart body_seg5 = body_seg4.getChild("body_seg5");
     }
 
     public static LayerDefinition createBodyLayer() {
@@ -146,7 +123,7 @@ public class RosyMapleMothModel<T extends RoseMapleMothEntity> extends Hierarchi
 
 
     @Override
-    public ModelPart root() {
+    public @NotNull ModelPart root() {
         return bone;
     }
 
@@ -168,7 +145,7 @@ public class RosyMapleMothModel<T extends RoseMapleMothEntity> extends Hierarchi
     }
 
     @Override
-    public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, int color) {
+    public void renderToBuffer(@NotNull PoseStack poseStack, @NotNull VertexConsumer vertexConsumer, int packedLight, int packedOverlay, int color) {
         bone.render(poseStack, vertexConsumer, packedLight, packedOverlay, color);
     }
 }

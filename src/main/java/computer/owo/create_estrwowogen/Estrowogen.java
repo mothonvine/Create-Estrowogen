@@ -1,20 +1,15 @@
 package computer.owo.create_estrwowogen;
 
 import com.mojang.logging.LogUtils;
-import computer.owo.create_estrwowogen.client.entities.renderers.RosyMapleMothRenderer;
 import computer.owo.create_estrwowogen.common.blocks.EstrowogenBlocks;
 import computer.owo.create_estrwowogen.common.creative.EstrowogenCreativeTabs;
 import computer.owo.create_estrwowogen.common.entities.EstrowogenEntities;
 import computer.owo.create_estrwowogen.common.items.EstrowogenItems;
 import computer.owo.create_estrwowogen.common.mbeffects.EstrowogenMobEffect;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.entity.EntityRenderers;import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
-import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
-import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;

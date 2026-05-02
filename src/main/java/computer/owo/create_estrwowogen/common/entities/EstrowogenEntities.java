@@ -2,7 +2,6 @@ package computer.owo.create_estrwowogen.common.entities;
 
 import computer.owo.create_estrwowogen.Estrowogen;
 import computer.owo.create_estrwowogen.common.entities.entity.RoseMapleMothEntity;
-import net.minecraft.core.Registry;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;

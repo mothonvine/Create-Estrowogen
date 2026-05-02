@@ -8,6 +8,7 @@ import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.resources.ResourceLocation;
+import org.jetbrains.annotations.NotNull;
 
 public class RosyMapleMothRenderer extends MobRenderer<RoseMapleMothEntity, RosyMapleMothModel<RoseMapleMothEntity>> {
     public RosyMapleMothRenderer(EntityRendererProvider.Context context) {
@@ -15,12 +16,12 @@ public class RosyMapleMothRenderer extends MobRenderer<RoseMapleMothEntity, Rosy
     }
 
     @Override
-    public ResourceLocation getTextureLocation(RoseMapleMothEntity p_114482_) {
+    public @NotNull ResourceLocation getTextureLocation(@NotNull RoseMapleMothEntity p_114482_) {
         return ResourceLocation.fromNamespaceAndPath(Estrowogen.MODID, "textures/entity/rosy_maple_moth/rosy_maple_moth.png");
     }
 
     @Override
-    public void render(RoseMapleMothEntity p_115308_, float p_115309_, float p_115310_, PoseStack p_115311_, MultiBufferSource p_115312_, int p_115313_) {
+    public void render(@NotNull RoseMapleMothEntity p_115308_, float p_115309_, float p_115310_, @NotNull PoseStack p_115311_, @NotNull MultiBufferSource p_115312_, int p_115313_) {
         super.render(p_115308_, p_115309_, p_115310_, p_115311_, p_115312_, p_115313_);
     }
 

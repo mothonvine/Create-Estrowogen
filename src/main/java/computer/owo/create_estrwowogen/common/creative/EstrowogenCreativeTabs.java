@@ -14,7 +14,7 @@ public class EstrowogenCreativeTabs {
     public static final DeferredRegister<CreativeModeTab> ESTROWOGEN_CREATIVE_MODE_TABS
             = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, Estrowogen.MODID);
 
-    public static final DeferredHolder<CreativeModeTab,CreativeModeTab> ESTROVOGEN_INV_TAB =
+    public static final DeferredHolder<CreativeModeTab,CreativeModeTab> ESTROWOGEN_INV_TAB =
             ESTROWOGEN_CREATIVE_MODE_TABS.register(
                     "estrowogen",
                     ()-> CreativeModeTab

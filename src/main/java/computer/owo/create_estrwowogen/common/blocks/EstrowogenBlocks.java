@@ -17,17 +17,16 @@ public class EstrowogenBlocks {
 
     public static final DeferredBlock<Block> BASE =
             registerBlockWithItem(
-                    "base",
                     () -> new Block(BlockBehaviour.Properties.of()
                             .mapColor(MapColor.PLANT)
                     ));
 
 
-    private static <B extends Block> DeferredBlock<B> registerBlockWithItem(String name, Supplier<? extends B> supplier){
-        DeferredBlock<B> return_block = ESTROWOGEN_BLOCKS.register(name, supplier);
-        ESTROWOGEN_ITEMS.registerSimpleBlockItem(name, return_block);
+    private static <B extends Block> DeferredBlock<B> registerBlockWithItem(Supplier<? extends B> supplier){
+        DeferredBlock<B> return_block = ESTROWOGEN_BLOCKS.register("base", supplier);
+        ESTROWOGEN_ITEMS.registerSimpleBlockItem("base", return_block);
         return return_block;
-    };
+    }
 
     public static void register(IEventBus eventBus){
         ESTROWOGEN_BLOCKS.register(eventBus);
